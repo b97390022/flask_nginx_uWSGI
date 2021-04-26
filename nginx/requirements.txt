@@ -1,0 +1,15 @@
+Flask
+Flask-Admin
+Flask-CKEditor
+Flask-Login
+Flask-Migrate
+Flask-RESTful
+Flask-Script
+Flask-Session
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+SQLAlchemy
+Werkzeug==0.16.0
+mysqlclient
+uWSGI

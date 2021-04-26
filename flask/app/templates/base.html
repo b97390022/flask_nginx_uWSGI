@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 提供 ico 檔案 -->
+  <link rel="icon" href="{{ url_for('static', filename='img/google_icon.ico') }}">
+
+  <!-- 引入 cdn CSS
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">   -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+  <!-- 引入我們自己的 CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+  
+  
+  <!-- 直接定義 CSS -->
+  <!-- <style>
+    table, th, td
+    {
+        border: 2px solid #000000;
+        border-collapse: collapse;
+        padding: 3px;
+        font-family:Verdana;
+        font-size: 12px;
+        text-align: left;
+    }
+</style> -->
+<title>Google Results Classifier</title>
+
+<!-- 可供更改的部分 -->
+{% block title %}{% endblock %}
+
+</head>
+
+<body>
+    <!-- 希望能固定出現在每個網頁的 nav -->
+{% block navbar %}{% endblock %}
+    
+
+  <main>
+    <!-- 可供更改的部分 -->
+    
+    {% block main %}{% endblock %}
+
+    {% block content %}
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=True) %}
+          {% for category, message in messages %}
+            <div class="alert alert-warning flash {{category}}" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+            </div>
+          {% endfor %}
+        {% endwith%}
+    </div>
+    {% endblock %}
+      
+  </main>
+
+  <!-- 希望能固定出現在每個網頁的 footer -->
+  <footer>
+  </footer> 
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <!-- 引入我們自己的 JS -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <!-- 可供更改的部分 -->
+  {% block script %}
+  {% endblock %}
+  </body>
+  </html>
+
+

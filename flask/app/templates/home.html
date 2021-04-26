@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class=head>
+    <h1>Paste Your Gene/Variant:</h1>
+    <div>
+        <div>Hi, {{current_user.id}}</div>
+        <div><span>Time: </span><span id="clock"></span></div>
+    </div>  
+</div>
+
+<form name="frm1" id="frm1" method="POST">
+    <textarea name="textbox" placeholder="EGFR p.Leu90Arg&#x0a;EGFR T790M&#x0a;KRAS,K12D&#x0a;PRKCA 775C>A" id="input1"></textarea>
+    <div class="submitwrap">
+        <input type="checkbox" name="use_cache" value=True checked> use_cache
+        <input type="checkbox" name="assist_curation" value=True checked> assist_curation
+        &nbsp;cache_date_limit:&nbsp;<input type="text" name="cache_date_limit" value=14 placeholder="enter number" pattern="[0-9]{1,4}" size=5 checked required>
+        <input class="button" type="submit" name="btn1" id="btn1" value="submit">
+        <button onclick='input()' class="btn btn-primary" type="button">Try it!</button>
+    </div>
+    
+</form>
+<a href=/auth/logout><button>logout</button></a>
+
+
+{% endblock %}

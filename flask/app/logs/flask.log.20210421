@@ -1,0 +1,119 @@
+[2021-04-21 16:16:28,042][app.py:1891][ERROR][140479039162240] - Exception on /api/send_mail [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/__init__.py", line 104, in send_mail
+    return render_template("index.html")
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+[2021-04-21 16:47:31,198][app.py:1891][ERROR][140197364442880] - Exception on /auth/login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 100, in post
+    user_data = users_schema.load(request.form, unknown=EXCLUDE)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'confirm_password': ['Missing data for required field.'], 'email': ['Missing data for required field.']}
+[2021-04-21 16:47:38,342][app.py:1891][ERROR][140197364442880] - Exception on /auth/login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 100, in post
+    user_data = users_schema.load(request.form, unknown=EXCLUDE)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'confirm_password': ['Missing data for required field.'], 'email': ['Missing data for required field.']}
+[2021-04-21 16:48:27,832][app.py:1891][ERROR][139673028327296] - Exception on /auth/login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 100, in post
+    user_data = users_schema.load(request.form, unknown=EXCLUDE)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'email': ['Missing data for required field.'], 'confirm_password': ['Missing data for required field.']}
+[2021-04-21 16:53:05,542][app.py:1891][ERROR][139846596659072] - Exception on /api/send_mail [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/__init__.py", line 89, in send_mail
+    return redirect(url_for('home'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'home'. Did you mean 'show_logs' instead?

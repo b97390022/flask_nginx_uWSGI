@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Google Results Classifier{% endblock %}
+
+{% block main %}
+
+<div class=head>
+    <h1>Paste Your Gene/Variant:</h1>
+    <div><span>Time: </span><span id="clock"></span></div>
+</div>
+
+<form name="frm1" id="frm1" method="POST">
+    <textarea name="textbox" placeholder="EGFR p.Leu90Arg&#x0a;EGFR T790M&#x0a;KRAS,K12D&#x0a;PRKCA 775C>A" id="input1"></textarea>
+    <div class="submitwrap">
+	    <input type="checkbox" name="use_cache" value=True checked> use_cache
+        <input type="checkbox" name="assist_curation" value=True checked> assist_curation
+        &nbsp;cache_date_limit:&nbsp;<input type="text" name="cache_date_limit" value=14 placeholder="enter number" pattern="[0-9]{1,4}" size=5 checked required>
+        <input class="button" type="submit" name="btn1" id="btn1" value="submit">
+        <button onclick='input()' class="btn btn-primary" type="button">Try it!</button>
+    </div>
+</form>
+
+<form name="frm2" id="frm2">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <h1>Prediction Results</h1>
+                <table class="dataframe data">
+                    <thead>
+                    <th></th>
+                    {% for i in range(cols|length) %}
+                        {% if (cols[i] == 'predict') or (cols[i] == 'predict_prob') or (cols[i] == 'search_term') %}
+                            <th class="toggle"> {{cols[i]}} </th>
+                        {% elif (cols[i] != 'url') and (cols[i] != 'single_result_pred') and (cols[i] != 'single_result_pred_prob') and (cols[i] != 'exact_match_result_link') %}
+                            <th> {{cols[i]}} </th>
+                        {% endif %}
+
+                    {% endfor %}
+                    </thead>
+                    <tbody>
+                        {% for r in range(rows) %}
+                            <tr>
+                                <th>{{r}}</th>
+                                {% for k in range(cols|length) %}
+                                    {% if cols[k] == 'search_term' %}
+                                        <td class="toggle"> 
+                                            <a href={{data.iloc[r,k+5].replace(' ','+')}} target="_blank"> {{data.iloc[r,k]}} </a> 
+                                            <div class="toggled" style="display:none">      
+                                                {% for q in range(data.iloc[r][k-2]|length) %}  
+                                                    {% if data.iloc[r][k-2][q] != '' %}   
+                                                        <a href={{data.iloc[r][k-2][q]}} target="_blank"> link{{q}} </a> <br/> 
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>                                  
+                                        </td>
+                                    {% elif cols[k] == 'curation' %}
+                                        <td id="catch"> 
+                                            <div>
+                                                <input style="display: inline-block; width=100px;" type="checkbox" class="checkbox" name=c{{r}} value=True id=c{{r}}>correct
+                                                <input style="display: inline-block; width=100px;" type="checkbox" class="checkbox" name=w{{r}} value=True id=w{{r}}>incorrect
+                                            </div>
+                                        </td>
+                                    {% elif cols[k] == 'note' %}
+                                        <td id="catch"> 
+                                            <input type="text" class="text" name=t{{r}} id=t{{r}} placeholder="*note:">
+                                        </td>    
+                                    {% elif cols[k] == 'predict' %}
+                                        <td> 
+                                            <div class="show_pred">
+                                                {{data.iloc[r][k]}}
+                                                    <!-- (<a href={{data.iloc[r,k+6].replace(' ','+')}} target="_blank"> {{data.iloc[r,k+6]}} </a> ) -->
+                                            </div>
+                                            <div class="toggled" style="display:none; border-bottom: 2px solid blcak;">      
+                                                {% for q in range(data.iloc[r][k+2]|length) %}         
+                                                        {{data.iloc[r][k+2][q]}}<br/>
+                                                {% endfor %}
+                                            </div>
+                                        </td>
+                                    {% elif cols[k] == 'predict_prob' %}
+                                        <td> 
+                                            <div class="show_prob">{{"%.2f"|format(data.iloc[r][k]|float)}}</div>
+                                            <div class="toggled" style="display:none">      
+                                                {% for q in range(data.iloc[r][k+2]|length ) %}         
+                                                        {{"%.2f"|format(data.iloc[r][k+2][q]|float)}}<br/>
+                                                {% endfor %}
+                                            </div>
+                                        </td>
+                                    {% elif (cols[k] != 'url') and (cols[k] != 'single_result_pred') and (cols[k] != 'single_result_pred_prob') and (cols[k] != 'exact_match_result_link') %}
+                                        <td> {{data.iloc[r][k]}} </td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>      
+                </table>
+                <!-- {% for html_record in html_records %}
+                    <h1>分析結果</h1>
+                    {{ html_record|safe }}
+                {% endfor %} -->
+                <input class="button" type="submit" name="btn2" id="btn2" value="submit">
+
+                <div id="successAlert" role="alert" style="display:none;"></div>
+                <span id="batchid" style="display:none;">{{batchid}}</span>
+
+                {% for html_count in html_counts %}
+                        <h1>API Usage</h1>
+                        {{ html_count|safe }}
+                {% endfor %}
+                
+                
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

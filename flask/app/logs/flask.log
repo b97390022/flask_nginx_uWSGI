@@ -1,0 +1,2752 @@
+[2021-04-23 01:25:24,792][app.py:1891][ERROR][140381753931520] - Exception on /auth/login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 105, in post
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'csrf_token': ['Unknown field.'], 'submit': ['Unknown field.']}
+[2021-04-23 01:58:52,148][app.py:1891][ERROR][140180599768960] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 118, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'username': ['Missing data for required field.'], 'password': ['Missing data for required field.']}
+[2021-04-23 01:58:54,199][app.py:1891][ERROR][140180022032128] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 118, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'username': ['Missing data for required field.'], 'password': ['Missing data for required field.']}
+[2021-04-23 01:58:55,335][app.py:1891][ERROR][140180599768960] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 118, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'username': ['Missing data for required field.'], 'password': ['Missing data for required field.']}
+[2021-04-23 02:01:28,017][app.py:1891][ERROR][139804934510464] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 117, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'password': ['Missing data for required field.'], 'username': ['Missing data for required field.']}
+[2021-04-23 02:01:28,856][app.py:1891][ERROR][139804423882496] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 117, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'password': ['Missing data for required field.'], 'username': ['Missing data for required field.']}
+[2021-04-23 02:03:49,541][app.py:1891][ERROR][139804423882496] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 117, in get
+    if current_user.is_authenticated:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "./app/view/auth.py", line 37, in request_loader
+    user_data = users_schema.load(request.form)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 723, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 904, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'password': ['Missing data for required field.'], 'username': ['Missing data for required field.']}
+[2021-04-23 04:16:53,662][app.py:1891][ERROR][139716251281280] - Exception on /auth/login [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "./app/view/auth.py", line 102, in get
+    return make_response(render_template('/auth/login.html', form=login_form))
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/flask/app/templates/auth/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/flask/app/templates/auth/login.html", line 14, in root
+    {{ form.hidden_tag() }}
+  File "/flask/app/templates/base.html", line 19, in root
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+  File "/flask/app/templates/auth/login.html", line 32, in block_main
+  File "/usr/local/lib/python3.7/site-packages/jinja2/runtime.py", line 262, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint '/auth/signup'. Did you mean 'auth.signup' instead?
+[2021-04-23 04:47:06,824][app.py:1891][ERROR][139642963437440] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='/app/script/config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 284, in main
+    di_config = RA.read_json(os.path.join(cur_dir, path_config))
+  File "./app/script/required_attributes.py", line 426, in read_json
+    with open(path, 'r',  encoding='utf8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/script/config_web.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 04:52:50,275][app.py:1891][ERROR][140667821483904] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='script/config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 284, in main
+    di_config = RA.read_json(os.path.join(cur_dir, path_config))
+  File "./app/script/required_attributes.py", line 426, in read_json
+    with open(path, 'r',  encoding='utf8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/flask/app/script/script/config_web.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 04:55:38,152][app.py:1891][ERROR][139832953120512] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:03:18,577][app.py:1891][ERROR][140128016926592] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:03:24,802][app.py:1891][ERROR][140128016926592] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:11:54,488][app.py:1891][ERROR][140616044140416] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('app/show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'app/show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:12:43,679][app.py:1891][ERROR][139740819318656] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('.app.show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'app.show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:12:49,969][app.py:1891][ERROR][139740819318656] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('.app.show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'app.show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:14:36,006][app.py:1891][ERROR][140422157887360] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[2021-04-23 05:19:12,047][app.py:1891][ERROR][140380041975680] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('.app.show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'app.show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:19:16,194][app.py:1891][ERROR][140380041975680] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 132, in index
+    return redirect(url_for('.app.show_results'))
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'app.show_results'. Did you mean 'show_logs' instead?
+[2021-04-23 05:23:02,684][app.py:1891][ERROR][140378657257216] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 06:10:20,203][app.py:1891][ERROR][140589684868992] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 06:10:38,810][app.py:1891][ERROR][140584949905152] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 06:10:41,212][app.py:1891][ERROR][140589684868992] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 06:18:37,220][app.py:1891][ERROR][140137830487936] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 06:18:39,327][app.py:1891][ERROR][140134229989120] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 802, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 642, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '/root/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 06:23:13,700][app.py:1891][ERROR][140008023279488] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 802, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 642, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 06:24:50,065][app.py:1891][ERROR][140008023279488] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 802, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 642, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 09:07:10,505][app.py:1891][ERROR][140330045261568] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:20:39,339][app.py:1891][ERROR][139706511628032] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 114, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 13:23:43,791][app.py:1891][ERROR][140509576202112] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 13:23:47,014][app.py:1891][ERROR][140505778198272] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:25:50,972][app.py:1891][ERROR][139722141718400] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='script/config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 284, in main
+    di_config = RA.read_json(os.path.join(cur_dir, path_config))
+  File "./app/script/required_attributes.py", line 426, in read_json
+    with open(path, 'r',  encoding='utf8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/flask/app/script/script/config_web.json'
+[2021-04-23 13:26:58,693][app.py:1891][ERROR][139993325483904] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:32:06,391][app.py:1891][ERROR][140433560246144] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 803, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 921, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:35:22,602][app.py:1891][ERROR][140429425096448] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 803, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 921, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:41:05,642][app.py:1891][ERROR][140156177454976] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 804, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource '~/nltk_data/tokenizers/punkt/PY3/english.pickle' not
+  found.  Please use the NLTK Downloader to obtain the resource:
+  >>> nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:43:27,780][app.py:1891][ERROR][140436380841856] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 804, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:43:30,599][app.py:1891][ERROR][140436380841856] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 804, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 13:48:12,273][app.py:1891][ERROR][139989417158528] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 804, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 14:00:10,329][app.py:1891][ERROR][140319928285056] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 804, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '~/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 14:01:26,458][app.py:1891][ERROR][140386035529600] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 803, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 922, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 643, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '/root/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 14:10:32,547][app.py:1891][ERROR][139663536809728] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 14:19:13,642][app.py:1891][ERROR][139788683745152] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 802, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 921, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 642, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:03:55,007][app.py:1891][ERROR][140251645323008] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:22:41,661][app.py:1891][ERROR][140404241012608] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:29:18,301][app.py:1891][ERROR][140315751073536] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 919, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:32:06,537][app.py:1891][ERROR][140467709073280] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:32:17,021][app.py:1891][ERROR][140467709073280] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 347, in main
+    raise ValueError('[ERROR] No Input pass-in')
+ValueError: [ERROR] No Input pass-in
+[2021-04-23 16:32:19,825][app.py:1891][ERROR][140463373788928] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:34:17,081][app.py:1891][ERROR][140007815501696] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 16:47:32,593][app.py:1891][ERROR][140322354554752] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+[2021-04-23 17:02:28,387][app.py:1891][ERROR][140322354554752] - Exception on /index [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_restful/__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/__init__.py", line 106, in index
+    python_results, batchid, api_counts = run_prediction_web.main(text, model_gclf,num_search_page=1, path_config='config_web.json',use_cache=use_cache,assist_curation=assist_curation,cache_date_limit=cache_date_limit)
+  File "./app/script/run_prediction_web.py", line 359, in main
+    df_temp = model_gclf.pre_process(df_googleresult.loc[df_googleresult.run_clf])
+  File "./app/script/required_attributes.py", line 695, in pre_process
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 7765, in apply
+    return op.get_result()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 185, in get_result
+    return self.apply_standard()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 276, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/usr/local/lib/python3.7/site-packages/pandas/core/apply.py", line 290, in apply_series_generator
+    results[i] = self.f(v)
+  File "./app/script/required_attributes.py", line 695, in <lambda>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 695, in <listcomp>
+    df_p['exact_match_result_title_replx'] = df_p.apply(lambda row: [self._char_replx_2_0(t, *stsplit(row.search_term)) for t in row.exact_match_result_title], axis=1)
+  File "./app/script/required_attributes.py", line 671, in _char_replx_2_0
+    text = ' '.join(nltk.word_tokenize(text))
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 106, in word_tokenize
+    return [token for sent in sent_tokenize(text, language)
+  File "/usr/local/lib/python3.7/site-packages/nltk/tokenize/__init__.py", line 90, in sent_tokenize
+    tokenizer = load('tokenizers/punkt/{0}.pickle'.format(language))
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 801, in load
+    opened_resource = _open(resource_url)
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 920, in _open
+    return find(path_, path + ['']).open()
+  File "/usr/local/lib/python3.7/site-packages/nltk/data.py", line 641, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource 'tokenizers/punkt/PY3/english.pickle' not found.
+  Please use the NLTK Downloader to obtain the resource:  >>>
+  nltk.download()
+  Searched in:
+    - '/root/nltk_data'
+    - '/root/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************

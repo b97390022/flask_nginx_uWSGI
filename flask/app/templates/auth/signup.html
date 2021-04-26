@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class=head>
+        <h1></h1>
+        <div><span>Time: </span><span id="clock"></span></div>
+    </div>  
+    
+    <div class=wraped>
+
+        <h1>Sign up</h1>
+
+        <form id="signup" action="" method="POST" autocomplete="off" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, autocomplete="off") }}
+            </p>
+            <p>
+                {{ form.confirm_password.label }}<br>
+                {{ form.confirm_password(size=32, autocomplete="off") }}
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32, autocomplete="off") }}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+{% endblock %}
+

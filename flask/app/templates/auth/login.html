@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class=head>
+        <h1></h1>
+        <div><span>Time: </span><span id="clock"></span></div>
+    </div>  
+    
+    <div class=wraped>
+
+        <h1>Sign In</h1>
+
+        <form action="" method="POST" autocomplete="off" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, autocomplete="off") }}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+        <h3>還沒有帳號嗎? 按<a href="{{ url_for('auth.signup') }}">這裡</a>申請帳號</h3>
+    </div>
+    
+{% endblock %}
